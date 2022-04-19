@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class RandomNumberGame : MonoBehaviour
 {
@@ -33,9 +34,9 @@ public class RandomNumberGame : MonoBehaviour
         playerLives = 3;
 
         min = 1;
-        max = Random.Range(5, 10);
+        max = UnityEngine.Random.Range(5, 10);
 
-        random = Random.Range(min, max + 1);
+        random = UnityEngine.Random.Range(min, max + 1);
 
 
 
@@ -130,10 +131,16 @@ public class RandomNumberGame : MonoBehaviour
     }
 
 
-    public void NumberInput(string _number)
+    public void NumberInput(String _number)
     {
-
         currentNumber = int.Parse(_number);
-    }
 
+        //try
+        //{
+        //    currentNumber = int.Parse(_number);
+        //}   catch (FormatException e) 
+        //{
+        //    speechBubble.text = "Kein Buchstaben du Knecht";
+        //}
+    }
 }
